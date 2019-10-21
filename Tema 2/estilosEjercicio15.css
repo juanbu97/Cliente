@@ -1,0 +1,15 @@
+.raton{
+    background-color: #FFFFCC;
+}
+
+.teclado{
+    background-color: #CCE6FF;
+}
+
+.mueveRaton{
+    background-color: rgb(255, 255, 255);
+}
+
+p{
+    width: 150px;
+}
