@@ -12,7 +12,7 @@
     let elemento;
     let info;
 
-    let limita = function () {   
+    let limita = function (evento) {   
  
     let codigoCaracter = evento.charCode || evento.keyCode;
     // Permitir utilizar las teclas con flecha horizontal
