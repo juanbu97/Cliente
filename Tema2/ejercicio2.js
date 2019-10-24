@@ -6,7 +6,9 @@
  *
  * @author Juan Antonio Bujalance García
  */
+{
 
-mensaje = "Hola mundo\n!Qué fácil es poner \'comillas simples\'\ny \"comillas dobles\"";
+    mensaje = "Hola mundo\n!Qué fácil es poner \'comillas simples\'\ny \"comillas dobles\"";
 
-console.log(mensaje); //imprime por consola el mensaje 
+    console.log(mensaje); //imprime por consola el mensaje 
+}

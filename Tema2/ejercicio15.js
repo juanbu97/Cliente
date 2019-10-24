@@ -26,13 +26,15 @@ Figura 6.3 El color de fondo del cuadro de información cambia en función del t
         parrafo = document.getElementById("parrafo"); //solo lo cargo una vez.
         let elementoBody = document.body;
 
-        elementoBody.onkeypress = muestraTecla;
-        elementoBody.onmousemove = cambiaColor;
-        elementoBody.onclick = muestraRaton;
+        elementoBody.addEventListener("keypress",muestraTecla);
+        elementoBody.addEventListener("mousemove",cambiaColor);
+        elementoBody.addEventListener("click",muestraRaton);
     }
-    window.onload = inicio;
+    
+    document.addEventListener("DOMContentLoaded",inicio);
+
     let muestraRaton = function (event) {//EVITANDO LA GLOBALIDAD AL DECLARAR CON LET Y METERLO DENTRO DE UN BLOQUE
-        
+
         //let evento =  window.event; ANTIGUALLA DE IE
         let coordenadaX = event.clientX;
         let coordenadaY = event.clientY;

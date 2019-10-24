@@ -21,32 +21,26 @@
  * correctos.
  * @author Juan Anotnio Bujalance García
  */
+{
 
-const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N',
-'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+    const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N',
+        'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 
-let dniNumero = 20620532;
-//let dniLetra="";
-let letraUsuario = "C";
+    let dniNumero = 20620532;
+    //let dniLetra="";
+    let letraUsuario = "C";
 
 
-if (dniNumero > 0 && dniNumero < 99999999) {
-    //dniletra = letras[(dniNumero  % 23)];
-    if (letras[(dniNumero  % 23)] == letraUsuario) {
-        console.log("El dni es correcto");    
-    }else{
-        console.log("El dni no es correcto");
-        console.log(dniletra);
-        console.log(letraUsuario);
+    if (dniNumero > 0 && dniNumero < 99999999) {
+        //dniletra = letras[(dniNumero  % 23)];
+        if (letras[(dniNumero % 23)] == letraUsuario) {
+            console.log("El dni es correcto");
+        } else {
+            console.log("El dni no es correcto");
+            console.log(dniletra);
+            console.log(letraUsuario);
+        }
+    } else {
+        console.log("El número del dni no es correcto");
     }
-}else{
-    console.log("El número del dni no es correcto");
 }
-
-/*if (dniLetra === letraUsuario) {
-    console.log("El dni es correcto");    
-}else{
-    console.log("El dni no es correcto");
-    console.log(dniletra);
-    console.log(letraUsuario);
-}*/

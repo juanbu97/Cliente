@@ -10,41 +10,50 @@
 *@author Juan Antonio Bujalance García
  */
 
+{
+    let info;
+    let enlaces;
+    let parrafos;
+    let enlacesParrafo;
 
-  window.onload = function() {
-    let info = document.getElementById("informacion");
-  
-    // Numero de enlaces de la pagina
-    let enlaces = document.getElementsByTagName("a");
-    info.innerHTML = "Numero de enlaces = "+enlaces.length;
-  
+
+    
+    muestraInformacion = function () {
+        info.innerHTML = "Numero de enlaces = " + enlaces.length;
+        info.innerHTML = info.innerHTML + "<br/>" + "El penultimo enlace apunta a: " + enlaces[enlaces.length - 2].href;;
+        contarEnlacesPrueba();
+        info.innerHTML = info.innerHTML + "<br/>" + "Número de enlaces en el tercer párrafo = " + enlacesParrafo.length;
+        
+    }
+    
+    
+    
     // Direccion del penultimo enlace
     
-    info.innerHTML = info.innerHTML + "<br/>" + "El penultimo enlace apunta a: "+enlaces[enlaces.length-2].href;;
-  
+    
     
     //Nunero de enlaces que apuntan a http://prueba
     function contarEnlacesPrueba() {
-        let contador =0;
+        let contador = 0;
         for (let i = 0; i < enlaces.length; i++) {
-            if(enlaces[i].href == "http://prueba" || enlaces[i].href == "http://prueba/")
+            if (enlaces[i].href == "http://prueba" || enlaces[i].href == "http://prueba/")
             contador++;
         }
-
+        
         info.innerHTML = info.innerHTML + "<br/>" + contador + " enlaces apuntan a http://prueba";
     }
-    contarEnlacesPrueba();
 
-  
-    // Numero de enlaces del tercer párrafo
-    /* var parrafos = document.getElementsByTagName("p");
-    enlaces = parrafos[2].getElementsByTagName("a");
-    info.innerHTML = info.innerHTML + "<br/>" + "Numero de enlaces del tercer párrafo = "+enlaces.length;
-    */
-   let parrafos = document.getElementsByTagName("p");
-   
-   let enlacesParrafo = parrafos[2].getElementsByTagName("a");
-
-   info.innerHTML = info.innerHTML + "<br/>" + "Número de enlaces en el tercer párrafo = " +enlacesParrafo.length;
-
+    let inicia = function () {
+        info = document.getElementById("informacion");
+    
+        // Numero de enlaces de la pagina
+        enlaces = document.getElementsByTagName("a");
+        parrafos = document.getElementsByTagName("p");
+        enlacesParrafo = parrafos[2].getElementsByTagName("a");
+        muestraInformacion();
+    }
+    
+    document.addEventListener("DOMContentLoaded", inicia);
+    
+    
 }

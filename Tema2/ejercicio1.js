@@ -8,6 +8,7 @@
  * activado el soporte de JavaScript
  * @author Juan Antonio Bujalance García
  */
-
- console.log("hola mundo"); //imprime por consola el mensaje 
- console.log("soy el segundo script");
+{
+    console.log("hola mundo"); //imprime por consola el mensaje 
+    console.log("soy el segundo script");
+}

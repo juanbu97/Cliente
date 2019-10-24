@@ -5,14 +5,15 @@
  * Utilizando la estructura for, crear un script que calcule el factorial de un número entero.
  * @author Juan Antonio Bujalance García
  */
+{
 
-  n =5;
-  
+  n = 5;
+
   factorial = 1;
 
-  while ( n!=0) {
-    factorial*=n;
+  while (n != 0) {
+    factorial *= n;
     n--;
   }
   console.log(factorial);
- 
+}

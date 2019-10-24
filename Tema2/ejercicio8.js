@@ -4,16 +4,18 @@
  * resultado devuelto por la función.
  * @author Juan Antonio Bujalance García
  */
+{
 
- numero = prompt("Introduzca un número");
- 
+    numero = prompt("Introduzca un número");
 
- function esPar(numero) {
-     if(numero % 2==0){
-        console.log("El número es par");
-     }else{
-         console.log("El número es impar");
-     }
- }
 
- esPar(numero);
+    function esPar(numero) {
+        if (numero % 2 == 0) {
+            console.log("El número es par");
+        } else {
+            console.log("El número es impar");
+        }
+    }
+
+    esPar(numero);
+}

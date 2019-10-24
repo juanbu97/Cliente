@@ -7,15 +7,23 @@
  * se ejecuta la función llamada muestra().
  * @author Juan Antonio Bujalance García
  */
+{
+  let elemento;
+  let enlace;
 
-function muestra() {
-    let elemento = document.getElementById("adicional");
+  let muestra = function () {
     elemento.className = "visible";
-  
-    let enlace = document.getElementById("enlace");
     enlace.className = "oculto";
   }
-  /* window.onload  = function () {
-    muestra()    
-  } */
-   
+
+  let inicia = function () {
+    elemento = document.getElementById("adicional");
+    enlace = document.getElementById("enlace");
+    elemento.addEventListener("click", muestra);
+    enlace.addEventListener("click", muestra);
+
+  }
+  document.addEventListener("DOMContentLoaded", inicia);
+
+
+}

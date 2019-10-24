@@ -7,12 +7,14 @@
  *elementos numéricos
  * @author Juan Antonio Bujalance García
 */
-
-valores = [true, 5, false, "hola", "adios", 2];
-
-comparacion = valores[3] > valores[4];
-
-console.log(comparacion);
-
-console.log(valores[3]);
-console.log(valores[4]);
+{
+    
+    valores = [true, 5, false, "hola", "adios", 2];
+    
+    comparacion = valores[3] > valores[4];
+    
+    console.log(comparacion);
+    
+    console.log(valores[3]);
+    console.log(valores[4]);
+}

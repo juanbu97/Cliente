@@ -10,15 +10,32 @@
  * @author Juan Antonio Bujalance García
  */
 
+{
+  let elemento;
+  let texto;
+  let lista;
+  let boton;
 
-function annade() {
-    let elemento = document.createElement("li");
-    let texto = document.createTextNode("Elemento de prueba");
+  let annade = function () {
     elemento.appendChild(texto);
-  
-    let lista = document.getElementById("lista");
+
     lista.appendChild(elemento);
-  
+    texto = document.createTextNode("Elemento de prueba");
+    elemento = document.createElement("li");
+
+    console.log("hola pesicola");
+
     let nuevoElemento = "<li>Texto de prueb ";
     lista.innerHTML = lista.innerHTML + nuevoElemento;
   }
+
+  let inicio = function () {
+    lista = document.getElementById("lista");
+    lista.addEventListener("click", annade);
+    boton.addEventListener("click", annade);
+  }
+
+  document.addEventListener("DOMContentLoaded", inicio);
+
+
+}
