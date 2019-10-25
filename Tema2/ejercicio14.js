@@ -1,13 +1,12 @@
 {
-    let enlaces;
-    let numero = trozos[1];
-    let idEnlace = this.id;
-    let trozos = idEnlace.split('_');
-    
-    let muestraOculta = function() {
 
-       
-        
+    let muestraOculta = function () {
+
+        let idEnlace = this.id;
+        let trozos = idEnlace.split('_');
+        let numero = trozos[1];
+        let parrafo = document.getElementById("contenidos_" + numero);
+
 
         switch (parrafo.style.display) {
             case 'none':
@@ -23,9 +22,9 @@
     }
 
     let inicia = function () {
-        enlaces.getElementsByTagName("a");
-        parrafo.getElementById("contenidos_"+numero);
-        enlaces.addEventListener("click",muestraOculta);
+        let enlaces = document.getElementsByTagName("a");
+
+        //enlaces.addEventListener("click",muestraOculta);
 
         for (i in enlaces) {
             enlaces[i].onclick = muestraOculta;

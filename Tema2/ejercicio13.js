@@ -11,27 +11,30 @@
  */
 
 {
-  let elemento;
-  let texto;
+  
+  
   let lista;
   let boton;
 
   let annade = function () {
+    
+    let elemento = document.createElement("li");
+    let texto = document.createTextNode("Elemento de prueba");
+
     elemento.appendChild(texto);
 
     lista.appendChild(elemento);
-    texto = document.createTextNode("Elemento de prueba");
-    elemento = document.createElement("li");
 
-    console.log("hola pesicola");
+  
 
-    let nuevoElemento = "<li>Texto de prueb ";
+    let nuevoElemento = "<li>Texto de prueba</li>";
     lista.innerHTML = lista.innerHTML + nuevoElemento;
   }
 
   let inicio = function () {
+    elemento = document.getElementById("lista");
     lista = document.getElementById("lista");
-    lista.addEventListener("click", annade);
+    boton = document.getElementById("boton");
     boton.addEventListener("click", annade);
   }
 
