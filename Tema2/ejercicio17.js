@@ -9,51 +9,40 @@
  * @author Juan Antonio Bujalance García 
  */
 {
-    let elemento;
-    let info;
+    const MAX_CARACTERES = 100;
 
-    let limita = function (evento) {
+    let elementoTextArea, elementoDiv;
 
-        console.log(evento);
-        let codigoCaracter = evento.wich;
-        // Permitir utilizar las teclas con flecha horizontal
-        if (codigoCaracter == 37 || codigoCaracter == 39) {
-            return true;
-        }
+    let limita = function (event) {
 
-        // Permitir borrar con la tecla Backspace y con la tecla Supr.
-        if (codigoCaracter == 8 || codigoCaracter == 46) {
-            return true;
+        switch (event.key) {
+            case 'ArrowLeft':
+            case 'ArrowRight':
+            case 'ArrowUp':
+            case 'ArrowDown':
+            case 'Backspace':
+            case 'Delete':
+                return;
         }
-        else if (elemento.value.length >= 100) {
-            return false;
-        }
-        else {
-            return true;
-        }
+        if (elementoTextArea.value.length >= MAX_CARACTERES)
+            event.preventDefault(); //anula el comportamiento por defecto del evento
     }
 
-    let actualizaInfo = function () {
+    let mostrarInformacion = function () {
 
-        if (elemento.value.length >= 100) {
-            info.innerHTML = "Máximo " + 100 + " caracteres";
-        }
-        else {
-            info.innerHTML = "Puedes escribir hasta " + (100 - elemento.value.length) + " caracteres adicionales";
-        }
+        let caracteresRestantes = MAX_CARACTERES - elementoTextArea.value.length;
+
+        elementoDiv.innerHTML = caracteresRestantes
+            ? `Caracteres restantes:  ${caracteresRestantes} `
+            : `Máximo de caracteres alcanzado ${MAX_CARACTERES}`;
     }
 
     let inicio = function () {
-        elemento = document.getElementById("texto");
-        info = document.getElementById("info");
+        elementoTextArea = document.getElementById("texto");
+        elementoDiv = document.getElementById("info");
 
-        elemento.addEventListener("keypress", limita);
-        elemento.addEventListener("keydown", actualizaInfo);
-        //elemento.onkeypress = limita;
-        //elemento.onkeyup = actualizaInfo;
-
+        elementoTextArea.addEventListener("keydown", limita);
+        elementoTextArea.addEventListener("keyup", mostrarInformacion);
     }
-
     document.addEventListener("DOMContentLoaded", inicio);
-
 }
